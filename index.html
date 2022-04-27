@@ -1,0 +1,252 @@
+<html lang="en">
+  <head>
+    <title>Snipcart sample store</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <script>
+      window.SnipcartSettings = {
+        publicApiKey:
+          "ODg5NmUzMGYtYTQ5Ni00ODM4LWFlNWMtZmUwN2ExNjVlNWFkNjM3Nzc0MzY1OTE1NDE2OTY0",
+        loadStrategy: "on-user-interaction",
+        modalStyle: "side",
+      };
+
+      (() => {
+        var a, d;
+        (d = (a = window.SnipcartSettings).version) != null ||
+          (a.version = "3.0");
+        var s, S;
+        (S = (s = window.SnipcartSettings).currency) != null ||
+          (s.currency = "usd");
+        var l, p;
+        (p = (l = window.SnipcartSettings).timeoutDuration) != null ||
+          (l.timeoutDuration = 2750);
+        var w, u;
+        (u = (w = window.SnipcartSettings).domain) != null ||
+          (w.domain = "cdn.snipcart.com");
+        var m, g;
+        (g = (m = window.SnipcartSettings).protocol) != null ||
+          (m.protocol = "https");
+        var y =
+            window.SnipcartSettings.version.includes("v3.0.0-ci") ||
+            (window.SnipcartSettings.version != "3.0" &&
+              window.SnipcartSettings.version.localeCompare("3.4.0", void 0, {
+                numeric: !0,
+                sensitivity: "base",
+              }) === -1),
+          f = ["focus", "mouseover", "touchmove", "scroll", "keydown"];
+        window.LoadSnipcart = o;
+        document.readyState === "loading"
+          ? document.addEventListener("DOMContentLoaded", r)
+          : r();
+        function r() {
+          window.SnipcartSettings.loadStrategy
+            ? window.SnipcartSettings.loadStrategy === "on-user-interaction" &&
+              (f.forEach((t) => document.addEventListener(t, o)),
+              setTimeout(o, window.SnipcartSettings.timeoutDuration))
+            : o();
+        }
+        var c = !1;
+        function o() {
+          if (c) return;
+          c = !0;
+          let t = document.getElementsByTagName("head")[0],
+            e = document.querySelector("#snipcart"),
+            i = document.querySelector(
+              `src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`
+            ),
+            n = document.querySelector(
+              `link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`
+            );
+          e ||
+            ((e = document.createElement("div")),
+            (e.id = "snipcart"),
+            e.setAttribute("hidden", "true"),
+            document.body.appendChild(e)),
+            h(e),
+            i ||
+              ((i = document.createElement("script")),
+              (i.src = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`),
+              (i.async = !0),
+              t.appendChild(i)),
+            n ||
+              ((n = document.createElement("link")),
+              (n.rel = "stylesheet"),
+              (n.type = "text/css"),
+              (n.href = `${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`),
+              t.prepend(n)),
+            f.forEach((v) => document.removeEventListener(v, o));
+        }
+        function h(t) {
+          !y ||
+            ((t.dataset.apiKey = window.SnipcartSettings.publicApiKey),
+            window.SnipcartSettings.addProductBehavior &&
+              (t.dataset.configAddProductBehavior =
+                window.SnipcartSettings.addProductBehavior),
+            window.SnipcartSettings.modalStyle &&
+              (t.dataset.configModalStyle = window.SnipcartSettings.modalStyle),
+            window.SnipcartSettings.currency &&
+              (t.dataset.currency = window.SnipcartSettings.currency),
+            window.SnipcartSettings.templatesUrl &&
+              (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl));
+        }
+      })();
+    </script>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h1 class="title">Snipcart sample store</h1>
+                <h2 class="subtitle">A sample store using Snipcart</h2>
+                <div class="field">
+                  <!-- 3 column product grid -->
+                  <div class="columns is-multiline">
+                    <div class="columns is-multiline">
+                      <div class="column is-one-third">
+                        <div class="card">
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img
+                                src="https://source.unsplash.com/random/401x310"
+                                alt="Placeholder image"
+                              />
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-content">
+                                <p class="title is-4">Starry night</p>
+                                <p class="subtitle is-6">$19.99</p>
+                              </div>
+                            </div>
+                            <div class="content">
+                              High-quality replica of the famous painting by the
+                              Dutch post-impressionist painter Vincent van Gogh.
+                              <br />
+                              <button
+                                class="snipcart-add-item button is-primary"
+                                data-item-id="starry-night"
+                                data-item-price="79.99"
+                                data-item-url="/paintings/starry-night"
+                                data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+                                data-item-image="https://source.unsplash.com/random/401x310"
+                                data-item-name="The Starry Night"
+                              >
+                                Add to cart
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="column is-one-third">
+                        <div class="card">
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img
+                                src="https://source.unsplash.com/random/400x300"
+                                alt="Placeholder image"
+                              />
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-content">
+                                <p class="title is-4">The Scream</p>
+                                <p class="subtitle is-6">$19.99</p>
+                              </div>
+                            </div>
+                            <div class="content">
+                              A surreal painting by the Norwegian
+                              post-impressionist painter Edvard Munch.
+                              <br />
+                              <button
+                                class="snipcart-add-item button is-primary"
+                                data-item-id="the-scream"
+                                data-item-price="79.99"
+                                data-item-url="/paintings/the-scream"
+                                data-item-description="A surreal painting by the Norwegian post-impressionist painter Edvard Munch."
+                                data-item-image="https://source.unsplash.com/random/400x300"
+                                data-item-name="The Scream"
+                              >
+                                Add to cart
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-one-third">
+                        <div class="card">
+                          <div class="card-image">
+                            <figure class="image is-4by3">
+                              <img
+                                src="https://source.unsplash.com/random/301x300"
+                                alt="Placeholder image"
+                              />
+                            </figure>
+                          </div>
+                          <div class="card-content">
+                            <div class="media">
+                              <div class="media-content">
+                                <p class="title is-4">La Gioconda</p>
+                                <p class="subtitle is-6">$19.99</p>
+                              </div>
+                            </div>
+                            <div class="content">
+                              A painting by the Italian Impressionist painter
+                              Leonardo da Vinci.
+                              <br />
+                              <button
+                                class="snipcart-add-item button is-primary"
+                                id="la-gioconda"
+                                data-item-id="la-gioconda"
+                                data-item-price="79.99"
+                                data-item-url="/paintings/la-gioconda"
+                                data-item-description="A painting by the Italian Impressionist painter Leonardo da Vinci."
+                                data-item-image="https://source.unsplash.com/random/401x302"
+                                data-item-name="La Gioconda"
+                              >
+                                Add to cart
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- checkout info -->
+              <div class="box">
+                <h2 class="subtitle">Checkout</h2>
+                <div class="columns">
+                  <div class="column">
+                    <button class="snipcart-checkout button is-primary">
+                      Click here to checkout
+                    </button>
+                  </div>
+                  <div class="total">
+                    <span>Total:&nbsp;</span>
+                    <span class="snipcart-total-price"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

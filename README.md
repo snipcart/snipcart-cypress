@@ -1,0 +1,2 @@
+# snipcart-cypress
+ Example project
