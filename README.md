@@ -6,7 +6,7 @@
 
 Open the folder in the terminal, then run `npm install`
 
-Add Cypress with `npm install cypress –save-dev`
+Add Cypress with `npm install cypress --save-dev`
 
   
 
