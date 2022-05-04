@@ -2,11 +2,11 @@
 # Testing Your Frontend with Cypress.io Framework
 
 
-Clone [https://github.com/nelitow/snipcart-cypress](https://github.com/nelitow/snipcart-cypress)
+**Before you get started please clone this repo.**
 
 Open the folder in the terminal, then run `npm install`
 
-Cypress was added to this project with `npm install cypress –save-dev`
+Add Cypress with `npm install cypress –save-dev`
 
   
 
