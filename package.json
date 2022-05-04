@@ -1,12 +1,9 @@
 {
   "scripts": {
     "test": "npm run browsersync & npm run cypress:open",
-    "browsersync": "browser-sync start --server --files './**/*.html' --no-ui",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "browsersync": "browser-sync start --server --files './**/*.html' --no-ui"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.9",
-    "cypress": "^9.6.0"
+    "browser-sync": "^2.27.9"
   }
 }
