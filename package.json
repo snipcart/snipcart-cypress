@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "browser-sync": "^2.27.9",
-    "cypress": "^9.6.0"
+    "cypress": "^9.6.1"
   }
 }
